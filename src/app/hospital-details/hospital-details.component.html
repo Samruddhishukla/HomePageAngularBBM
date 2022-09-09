@@ -1,0 +1,35 @@
+<div class="container">
+    <app-hospital-form></app-hospital-form>
+  </div>
+<table class="table table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th>Hospital Name</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>Contact Number</th>
+            <th>Actions</th>
+           
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let hsp of hspService.listHospital">
+            <td>{{hsp.hospitalName}}</td>
+            <td>{{hsp.address}}</td>
+            <td>{{hsp.city}}</td>
+            <td>{{hsp.contactNo}}</td>  
+            <td>
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Actions
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" href="#" (click)="populateHospital(hsp)">Edit</a>
+                      <a class="dropdown-item" href="#" (click)="delete(hsp.hospitalId)">Delete</a>
+                    </div>
+                  </div>
+                </td> 
+        </tr>
+    </tbody>
+</table>
+

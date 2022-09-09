@@ -1,0 +1,9 @@
+.light .navbar-nav .show>.nav-link.active
+{
+    color: var(--secondary-color);
+}
+.navbar-light .navbar-nav .nav-link
+{
+    color: var(--primary-color);
+    text-decoration: underline;
+}

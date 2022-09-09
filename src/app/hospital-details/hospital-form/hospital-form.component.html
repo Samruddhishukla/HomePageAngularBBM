@@ -1,0 +1,62 @@
+<input #checkbox1 type="checkbox" name="toggle" id="toggle">
+<label for="toggle"></label>
+
+<div class="container">
+    </div>
+
+<div class="formAdd">
+    <form autocomplete="off" #myForm="ngForm" (ngSubmit)="myForm.form.valid && submit(myForm)">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <input type="hidden" name="hospitalId" [value]="hspService.hospitalData.hospitalId">
+
+                    <label for="hospitalName">Hospital Name</label>
+                    <div *ngIf="hospitalName.invalid && (hospitalName.touched || hospitalName.dirty)" class="float-right">
+                        <p class="text-danger">*</p>
+                   </div>
+                    <input type="text" name="hospitalName" class="form-control" placeholder="Enter Hospital Name" #hospitalName="ngModel" [(ngModel)]="hspService.hospitalData.hospitalName" required>
+                </div>
+                <div class="col-md-3">
+                    <input type="hidden" name="hospitalId" [value]="hspService.hospitalData.hospitalId">
+
+                    <label for="address">Address</label>
+                    <div *ngIf="address.invalid && (address.touched || address.dirty)" class="float-right">
+                        <p class="text-danger">*</p>
+                   </div>
+                    <input type="text" name="address" class="form-control" placeholder="Enter Hospital Address" #address="ngModel" [(ngModel)]="hspService.hospitalData.address" required>
+                </div>
+                <div class="col-md-3">
+                    <input type="hidden" name="hospitalId" [value]="hspService.hospitalData.hospitalId">
+
+                    <label for="city">City</label>
+                    <div *ngIf="city.invalid && (city.touched || city.dirty)" class="float-right">
+                        <p class="text-danger">*</p>
+                   </div>
+                    <input type="text" name="city" class="form-control" placeholder="Enter city Name" #city="ngModel" [(ngModel)]="hspService.hospitalData.city" required>
+                </div>
+                <div class="col-md-3">
+                    <input type="hidden" name="hospitalId" [value]="hspService.hospitalData.hospitalId">
+
+                    <label for="contactNo">Contact No</label>
+                    <div *ngIf="contactNo.invalid && (contactNo.touched || contactNo.dirty)" class="float-right">
+                        <p class="text-danger">*</p>
+                   </div>
+                    <input type="number" name="contactNo" class="form-control" placeholder="Enter Contact No" #contactNo="ngModel" [(ngModel)]="hspService.hospitalData.contactNo" required>
+                </div>
+            </div>
+
+            <div class="container overflow-hidden">
+                
+                <div class="row gy-1">
+                  <div class="col-md-2">
+                    <button type="submit" class="btn btn-success btn-block">Save</button>
+                  </div>
+                  <div class="col-md-2">
+                    <button type="submit" class="btn btn-danger btn-block">Cancel</button>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
